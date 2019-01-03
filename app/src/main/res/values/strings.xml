@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">South BR Memes</string>
+    <string name="action_settings">Deus ta vendo</string>
+    <string name="title_activity_index">IndexActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_logged">LoggedActivity</string>
+
+    <string name="banner_ad_unit_id">ca-app-pub-6530429566946986/7818652252</string>
+    <string name="banner_ad_unit_id_1">ca-app-pub-6530429566946986/7435880007</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

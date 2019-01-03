@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="meme"
+            type="com.example.dev.southbrmemes.viewmodel.MemeViewModel"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/borda"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/textViewListNameMyMeme"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="@{meme.name}"
+                    android:textColor="@android:color/white"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imgListMyMeme"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:url="@{meme.url}" />
+
+                <TextView
+                    android:id="@+id/textViewListCommitMyMeme"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="@{meme.commit}"
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp" />
+
+            </LinearLayout>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fabEditMyMeme"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="end"
+                android:layout_margin="@dimen/fab_margin"
+                app:backgroundTint="@color/colorPrimary"
+                app:srcCompat="@android:drawable/ic_menu_edit" />
+        </android.support.design.widget.CoordinatorLayout>
+    </LinearLayout>
+</layout>

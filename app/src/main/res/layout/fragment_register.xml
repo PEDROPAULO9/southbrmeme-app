@@ -1,0 +1,342 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="user" type="com.example.dev.southbrmemes.viewmodel.UserViewModel"/>
+        <variable name="userInsertDomain" type="com.example.dev.southbrmemes.view.service.insert.UserInsertDomain"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/register"
+        tools:context="view.fragment.RegisterUserFragment">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical">
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fadeScrollbars="false"
+                android:paddingRight="2dp"
+                android:scrollbarSize="3dp"
+                android:scrollbarThumbVertical="@color/colorPrimary">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center">
+
+                        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            card_view:cardBackgroundColor="@android:color/transparent"
+                            card_view:cardCornerRadius="30dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="4dp"
+                                android:background="@drawable/borda_circular"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="8dp" />
+
+                                <EditText
+                                    android:id="@+id/editTextRegisterName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="3"
+                                    android:ems="10"
+                                    android:gravity="left"
+                                    android:hint="Nick"
+                                    android:inputType="textPersonName"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/white"
+                                    android:textColorHint="@android:color/white"
+                                    android:textSize="20dp"
+                                    android:text="@{user.name}"
+                                    android:afterTextChanged="@{(text) -> user.setName(text.toString())}" />
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="8dp"
+                                    android:layout_weight="1" />
+
+
+                            </LinearLayout>
+                        </android.support.v7.widget.CardView>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center">
+
+                        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            card_view:cardBackgroundColor="@android:color/transparent"
+                            card_view:cardCornerRadius="30dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="4dp"
+                                android:background="@drawable/borda_circular"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="8dp" />
+
+                                <EditText
+                                    android:id="@+id/editTextRegisterLogin"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="3"
+                                    android:ems="10"
+                                    android:gravity="left"
+                                    android:hint="Login"
+                                    android:inputType="textPersonName"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/white"
+                                    android:textColorHint="@android:color/white"
+                                    android:textSize="20dp"
+                                    android:text="@{user.login}"
+                                    android:afterTextChanged="@{(text) -> user.setLogin(text.toString())}" />
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="8dp"
+                                    android:layout_weight="1" />
+
+
+                            </LinearLayout>
+                        </android.support.v7.widget.CardView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center">
+
+                        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            card_view:cardBackgroundColor="@android:color/transparent"
+                            card_view:cardCornerRadius="30dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="4dp"
+                                android:background="@drawable/borda_circular"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="8dp" />
+
+                                <EditText
+                                    android:id="@+id/editTextRegisterPassword"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="3"
+                                    android:ems="10"
+                                    android:gravity="left"
+                                    android:hint="Senha"
+                                    android:inputType="textPassword"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/white"
+                                    android:textColorHint="@android:color/white"
+                                    android:textSize="20dp"
+                                    android:text="@{user.password}"
+                                    android:afterTextChanged="@{(text) -> user.setPassword(text.toString())}" />
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="8dp"
+                                    android:layout_weight="1" />
+
+
+                            </LinearLayout>
+                        </android.support.v7.widget.CardView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center">
+
+                        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            card_view:cardBackgroundColor="@android:color/transparent"
+                            card_view:cardCornerRadius="30dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="4dp"
+                                android:background="@drawable/borda_circular"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="8dp" />
+
+                                <EditText
+                                    android:id="@+id/editTextRegisterConfirmPassword"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="3"
+                                    android:ems="10"
+                                    android:gravity="left"
+                                    android:hint="Confirmar Senha"
+                                    android:inputType="textPassword"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/white"
+                                    android:textColorHint="@android:color/white"
+                                    android:textSize="20dp"
+                                    android:text="@{user.newPassword}"
+                                    android:afterTextChanged="@{(text) -> user.setNewPassword(text.toString())}" />
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="8dp"
+                                    android:layout_weight="1" />
+
+
+                            </LinearLayout>
+                        </android.support.v7.widget.CardView>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginRight="50dp"
+                        android:gravity="center">
+
+                        <CheckBox
+                            android:id="@+id/checkboxTerm"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/white"
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="aceito os "
+                            android:textColor="@android:color/white"
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:id="@+id/textViewTerm"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="termos de uso"
+                            android:textColor="@android:color/white"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginTop="15dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnRegisterAccount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/button_global_2"
+                            android:text="Cadastrar"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold"
+                            android:onClick="@{() -> userInsertDomain.insert(user)}"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="25dp"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginTop="15dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnReturnLogin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:text="Ja possui uma conta?"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

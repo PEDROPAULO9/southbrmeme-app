@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable name="meme" type="com.example.dev.southbrmemes.viewmodel.MemeViewModel"/>
+        <variable name="image" type="com.example.dev.southbrmemes.model.utils.ImageBitmap"/>
+        <variable name="activity" type="android.app.Activity"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/borda_black"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewListNameMeme"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="start"
+                    android:text="@{meme.name}"
+                    android:textColor="@android:color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imgListMeme"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:url="@{meme.url}" />
+
+                <TextView
+                    android:id="@+id/textViewListCommitMeme"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="@{meme.commit}"
+                    android:textColor="@android:color/black"
+                    android:textSize="20dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_margin="@dimen/fab_margin"
+                android:orientation="vertical">
+
+                <android.support.design.widget.CoordinatorLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/fabSend"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="40dp"
+                        app:backgroundTint="@color/colorPrimary"
+                        app:srcCompat="@drawable/ic_send_black_24dp"
+                        android:onClick="@{()-> image.getSend(meme.url, activity)}" />
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/fabDownload"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        app:backgroundTint="@color/colorPrimary"
+                        app:srcCompat="@drawable/ic_file_download_black_24dp"
+                        android:onClick="@{()-> image.getDownload(meme.url, activity)}" />
+                </android.support.design.widget.CoordinatorLayout>
+            </LinearLayout>
+        </android.support.design.widget.CoordinatorLayout>
+    </LinearLayout>
+</layout>
